@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Carrito</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+      <style>
+        .content-title{
+          color: blue;
+        }
+        .buttons-container{
+          margin-bottom: 100px;
+          margin-top: 40px;
+        }
+        .btn-success{
+          margin: 26px;
+        }
+      </style>
+  </head>
+  <body>
+    <div class="container mt-3">
+      <div class="jumbotron">
+          <h2 class="content-title">Tu Carrito</h2>
+          <div class="container">
+            
+            <ul>
+              <% for (var i = 0; i < carritos.length ; i++) { %>
+                  <li> 
+                    cantidad de productos: <%= carritos[i].productos ? carritos[i].productos.length : 0 %> 
+                    <br><br>
+                    <ul>
+                      <% if(carritos[i].productos) { %>
+                        <% for (var j = 0; j < carritos[i].productos.length ; j++) { %>
+                          <li><%= carritos[i].productos[j].name %></li>  
+                        <% } %>
+                      <% } %>
+                    </ul>
+                  </li>
+              <% } %>
+            </ul>
+            <% if(typeof info != 'undefined'){ %>
+              <h3 style="color: green;">
+                <%= info %>
+              </h3>
+            <% } %>
+            <div class="actions-container">
+              <form action="/comprar" method="GET">
+                <button class="btn btn-primary" type="submit">Comprar</button>
+              </form>  
+            </div>
+          </div>
+          <div class="buttons-container">
+            <a href="/" class="btn btn-secondary">Volver</a>
+          </div>
+          <a href="/logout" class="btn btn-warning btn-lg right" role="button">Desloguear</a>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+
+TWILIO_ACCOUNT_SID = ''
+TWILIO_AUTH_TOKEN = ''
+WHATSAPP_EMISOR = '+14155238886'
+WHATSAPP_RECEPTOR = 'whatsapp:+54911xxxxx'
+//WHATSAPP_RECEPTOR = '+549116xxxx'
+
+ADMIN_MAIL = 'efraincruz2012@gmail.com'
+
+AUTH_GMAIL_EMAIL = efraincruz2012@gmail.com
+AUTH_GMAIL_PASSWORD = xxxxxxxx
+MAIL_SERVICE = gmail
+MAIL_PORT = 587
+
+MONGODB_CONNECTION_URL = 'mongodb+srv://ecruz:Efra2005@cluster0.veqqf.mongodb.net/test?authSource=admin&replicaSet=atlas-oy7sd2-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true'
+
+// llave para jwt
+PRIVATE_KEY = 'millaveprivada'

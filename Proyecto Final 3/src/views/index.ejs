@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Index</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+      <style>
+        .content-title{
+          color: blue;
+        }
+        .buttons-container{
+          margin-bottom: 100px;
+          margin-top: 40px;
+        }
+        .btn-success{
+          margin: 26px;
+        }
+      </style>
+  </head>
+  <body>
+    <div class="container mt-3">
+      <div class="jumbotron">
+          <h2 class="content-title">Bienvenido <%= nombre %></h2>
+          <% if(typeof picture != 'undefined'){ %>
+            <img src="<%= picture %>" width="250px" />
+          <% } %>
+          <div class="buttons-container">
+            <a href="/productos" class="btn btn-success">Productos</a>
+            <a href="/carrito" class="btn btn-success">Carrito</a>
+          </div>
+          <a href="/logout" class="btn btn-warning btn-lg right" role="button">Desloguear</a>
+      </div>
+    </div>
+    <% if(typeof token != 'undefined'){ %>
+      <script>
+          document.cookie="user=<%= token %>";
+          console.log('token guardado: <%= token %>');
+      </script>
+    <% } %>
+  </body>
+</html>
